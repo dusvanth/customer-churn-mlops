@@ -1,0 +1,39 @@
+stages:
+  preprocess:
+    cmd: python src/data/preprocess.py
+    deps:
+      - data/raw/telco_customer_churn.csv
+      - src/data/preprocess.py
+    outs:
+      - data/processed/cleaned_telco.csv
+
+
+  train:
+    cmd: python src/models/train.py
+    deps:
+      - data/processed/cleaned_telco.csv
+      - src/models/train.py
+    outs:
+      - model.pkl
+
+
+  train_all:
+    cmd: python src/models/train_all_models.py
+    deps:
+      - data/processed/cleaned_telco.csv
+      - src/models/train_all_models.py
+    outs:
+      - reports/metrics.json:
+          cache: false
+    plots:
+      - reports/metrics.json:
+          x: model
+          y: accuracy
+
+
+  evaluate:
+    cmd: python src/models/evaluate.py
+    deps:
+      - data/processed/cleaned_telco.csv
+      - model.pkl
+      - src/models/evaluate.py

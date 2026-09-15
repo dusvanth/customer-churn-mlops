@@ -1,0 +1,44 @@
+# Git
+.git/
+.gitignore
+
+# DVC
+.dvc/
+.dvcignore
+dvc.yaml
+dvc.lock
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Data (raw data not needed in container)
+data/raw/
+data/processed/
+
+# MLflow
+mlruns/
+mlflow.db
+
+# Notebooks & IDE
+*.ipynb
+.vscode/
+.idea/
+
+# Reports
+reports/
+
+# Docs
+README.md
+LICENSE
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore

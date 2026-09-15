@@ -1,0 +1,12 @@
+# Production dependencies only (for Docker)
+# These are the minimal packages needed to serve predictions
+
+pandas==2.3.0
+numpy==2.3.1
+scikit-learn==1.7.0
+xgboost
+lightgbm
+joblib==1.5.1
+fastapi
+uvicorn[standard]
+pydantic==2.11.7

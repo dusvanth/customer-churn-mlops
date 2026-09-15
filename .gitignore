@@ -1,0 +1,30 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Environment
+.env
+
+# MLflow
+mlruns/
+mlflow.db
+
+# Model artifacts (tracked by DVC)
+model.pkl
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# DVC cache
+/data/processed/
